@@ -1,0 +1,10 @@
+Paper (Lee et al)
+https://www-nature-com.libproxy1.usc.edu/articles/s41588-020-0636-z#data-availability
+
+sequencing data for KUL3
+https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-8410/files/
+
+scRNA-seq data for KUL3
+https://www-nature-com.libproxy1.usc.edu/articles/s41588-020-0636-z#data-availability
+
+
