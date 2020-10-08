@@ -1,1 +1,2 @@
-# fa20-qbio490
+# QBIO490, Fall 2020
+### Gina Yang
