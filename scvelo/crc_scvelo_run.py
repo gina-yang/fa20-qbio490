@@ -16,5 +16,5 @@ scv.tl.velocity(crcdata)
 scv.tl.velocity_graph(crcdata)
 
 scv.tl.umap(crcdata) # set to umap
-scv.pl.velocity_embedding_stream(adata, basis='umap') # plot velocity 
+scv.pl.velocity_embedding_stream(crcdata, basis='umap') # plot velocity 
 scv.pl.velocity(crcdata, ['CD3D',  'CD68', 'DCN', 'EPCAM', 'KIT', 'CD79A'], ncols=2) # view marker genes
