@@ -3,7 +3,7 @@ import scvelo as scv
 scv.settings.verbocity = 3
 scv.settings.presenter_view = True
 
-crcdata = scv.read('crctest.loom', cache=True)
+crcdata = scv.read('kul01.loom', cache=True)
 crcdata.var_names_make_unique()
 crcdata
 
