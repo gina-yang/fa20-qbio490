@@ -11,3 +11,8 @@
 ### Notes:
 - Make sure to use Python 3.8 (but not 3.9 because as of Oct 2020 it seems to be badly supported). Anything 3.7 and below can result in using old versions of packages with a bunch of fun bugs.
 - If stuff isn't working/weird errors, ensure that packages are updated (ex. with `pip install -U [packagename]` or `conda update [packagename]`) 
+
+### Questions/Issues:
+- How to find expected number of cells for loompy?
+- How to remove cells from processing?
+- How to change number of genes used in velocity analysis?
