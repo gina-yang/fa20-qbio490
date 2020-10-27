@@ -1,0 +1,56 @@
+Loompy v3.0.6 by Linnarsson Lab 🌸 (http://linnarssonlab.org & http://loompy.org)                                                                                                                                                               
+2020-10-26 15:39:00,838 - INFO - Using 8 threads.                                                                       
+2020-10-26 15:39:00,847 - INFO - kallisto bus -i human_GRCh38_gencode.v31\gencode.v31.fragments.idx -o C:\Users\ginay\AppData\Local\Temp\tmpjrorufra -x 10xv2 -t 8 kul19/scrEXT009_hg19_S5_L001_R1_001.fastq.gz kul19/scrEXT009_hg19_S5_L001_R2_001.fastq.gz kul19/scrEXT009_hg19_S5_L002_R1_001.fastq.gz kul19/scrEXT009_hg19_S5_L002_R2_001.fastq.gz kul19/scrEXT009_hg19_S5_L003_R1_001.fastq.gz kul19/scrEXT009_hg19_S5_L003_R2_001.fastq.gz kul19/scrEXT009_hg19_S5_L004_R1_001.fastq.gz kul19/scrEXT009_hg19_S5_L004_R2_001.fastq.gz kul19/scrEXT009_hg19_S5_L005_R1_001.fastq.gz kul19/scrEXT009_hg19_S5_L005_R2_001.fastq.gz kul19/scrEXT009_hg19_S5_L006_R1_001.fastq.gz kul19/scrEXT009_hg19_S5_L006_R2_001.fastq.gz                  
+2020-10-26 15:39:00,922 - INFO - [index] k-mer length: 31                                                               
+2020-10-26 15:39:00,922 - INFO - [index] number of targets: 845,338                                                     
+2020-10-26 15:39:00,925 - INFO - [index] number of k-mers: 271,648,279                                                  
+2020-10-26 15:40:48,668 - INFO - [index] number of equivalence classes: 4,776,424                                       
+2020-10-26 15:41:18,365 - INFO - [quant] will process sample 1: kul19/scrEXT009_hg19_S5_L001_R1_001.fastq.gz            
+2020-10-26 15:41:18,367 - INFO -                                kul19/scrEXT009_hg19_S5_L001_R2_001.fastq.gz            
+2020-10-26 15:41:18,380 - INFO - [quant] will process sample 2: kul19/scrEXT009_hg19_S5_L002_R1_001.fastq.gz            
+2020-10-26 15:41:18,385 - INFO -                                kul19/scrEXT009_hg19_S5_L002_R2_001.fastq.gz            
+2020-10-26 15:41:18,399 - INFO - [quant] will process sample 3: kul19/scrEXT009_hg19_S5_L003_R1_001.fastq.gz            
+2020-10-26 15:41:18,406 - INFO -                                kul19/scrEXT009_hg19_S5_L003_R2_001.fastq.gz            
+2020-10-26 15:41:18,416 - INFO - [quant] will process sample 4: kul19/scrEXT009_hg19_S5_L004_R1_001.fastq.gz            
+2020-10-26 15:41:18,422 - INFO -                                kul19/scrEXT009_hg19_S5_L004_R2_001.fastq.gz            
+2020-10-26 15:41:18,433 - INFO - [quant] will process sample 5: kul19/scrEXT009_hg19_S5_L005_R1_001.fastq.gz            
+2020-10-26 15:41:18,449 - INFO -                                kul19/scrEXT009_hg19_S5_L005_R2_001.fastq.gz            
+2020-10-26 15:41:18,450 - INFO - [quant] will process sample 6: kul19/scrEXT009_hg19_S5_L006_R1_001.fastq.gz            
+2020-10-26 15:41:18,451 - INFO -                                kul19/scrEXT009_hg19_S5_L006_R2_001.fastq.gz            
+2020-10-26 18:38:08,673 - INFO - [quant] finding pseudoalignments for the reads ... done                                
+2020-10-26 18:38:08,688 - INFO - [quant] processed 266,870,550 reads, 212,430,887 reads pseudoaligned                   
+2020-10-26 18:39:09,318 - ERROR - {                                                                                                                                                                                                             
+2020-10-26 18:39:09,318 - ERROR -       "n_targets": 0,                                                                                                                                                                                         
+2020-10-26 18:39:09,328 - ERROR -       "n_bootstraps": 0,                                                                                                                                                                                      
+2020-10-26 18:39:09,340 - ERROR -       "n_processed": 266870550,                                                                                                                                                                               
+2020-10-26 18:39:09,345 - ERROR -       "n_pseudoaligned": 193847110,                                                                                                                                                                           
+2020-10-26 18:39:09,345 - ERROR -       "n_unique": 77768723,                                                                                                                                                                                   2020-10-26 18:39:09,360 - ERROR -       "p_pseudoaligned": 72.6,                                                                                                                                                                                
+2020-10-26 18:39:09,366 - ERROR -       "p_unique": 29.1,                                                                                                                                                                                       2020-10-26 18:39:09,367 - ERROR -       "kallisto_version": "0.46.1",                                                                                                                                                                           
+2020-10-26 18:39:09,381 - ERROR -       "index_version": 0,                                                                                                                                                                                     
+2020-10-26 18:39:09,399 - ERROR -       "start_time": "Mon Oct 26 15:39:00 2020",                                                                                                                                                               
+2020-10-26 18:39:09,417 - ERROR -       "call": "kallisto bus -i human_GRCh38_gencode.v31\gencode.v31.fragments.idx -o C:\Users\ginay\AppData\Local\Temp\tmpjrorufra -x 10xv2 -t 8 kul19/scrEXT009_hg19_S5_L001_R1_001.fastq.gz kul19/scrEXT009_hg19_S5_L001_R2_001.fastq.gz kul19/scrEXT009_hg19_S5_L002_R1_001.fastq.gz kul19/scrEXT009_hg19_S5_L002_R2_001.fastq.gz kul19/scrEXT009_hg19_S5_L003_R1_001.fastq.gz kul19/scrEXT009_hg19_S5_L003_R2_001.fastq.gz kul19/scrEXT009_hg19_S5_L004_R1_001.fastq.gz kul19/scrEXT009_hg19_S5_L004_R2_001.fastq.gz kul19/scrEXT009_hg19_S5_L005_R1_001.fastq.gz kul19/scrEXT009_hg19_S5_L005_R2_001.fastq.gz kul19/scrEXT009_hg19_S5_L006_R1_001.fastq.gz kul19/scrEXT009_hg19_S5_L006_R2_001.fastq.gz"                                                                                                                         
+2020-10-26 18:39:09,434 - ERROR - }                                                                                                                                                                                                             
+2020-10-26 18:39:09,444 - ERROR - Error decoding run_info.json: Invalid \escape: line 12 column 51 (char 310)           
+2020-10-26 18:39:09,449 - INFO - Loading gene metadata                                                                  
+2020-10-26 18:39:10,011 - INFO - Loading fragments-to-gene mappings                                                     
+2020-10-26 18:39:10,551 - INFO - Indexing genes                                                                         
+2020-10-26 18:39:10,978 - INFO - Loading equivalence classes                                                            
+2020-10-26 18:39:43,520 - INFO - Mapping equivalence classes to genes                                                   
+2020-10-26 18:39:50,103 - INFO - Loading fragment IDs                                                                   
+2020-10-26 18:39:50,516 - INFO - Loading BUS records                                                                    
+2020-10-26 18:41:51,796 - INFO - Sorting cell IDs                                                                       
+2020-10-26 18:42:05,651 - INFO - Found 212,430,887 records for 60,662 genes and 2,022,855 uncorrected cell barcodes.    
+2020-10-26 18:42:05,651 - INFO - Correcting cell barcodes                                                               
+2020-10-26 18:50:39,667 - INFO - Found 570,554 corrected cell barcodes.                                                 
+2020-10-26 18:50:39,667 - INFO - Removing redundant reads using UMIs                                                    
+2020-10-26 19:06:56,913 - INFO - 77% sequencing saturation.                                                             
+2020-10-26 19:54:55,540 - INFO - Counting pseudoalignments for main matrix                                              
+2020-10-26 19:56:24,428 - INFO - Found 16,520,184 UMIs.                                                                 
+2020-10-26 19:56:25,947 - INFO - Counting pseudoalignments for layer 'unspliced'                                        
+2020-10-26 19:59:56,006 - INFO - Found 5,635,160 UMIs.                                                                  
+2020-10-26 19:59:57,070 - INFO - Counting pseudoalignments for layer 'spliced'                                          
+2020-10-26 20:04:19,759 - INFO - Found 12,456,516 UMIs.                                                                 
+2020-10-26 20:04:19,778 - INFO - Calling cells                                                                          
+2020-10-26 20:18:52,630 - INFO - Found 4022 valid cells and ~4583 ambient UMIs.                                         
+2020-10-26 20:18:52,632 - INFO - Creating loom file 'kul19_10000.loom'                                                  
+2020-10-26 20:18:52,638 - INFO - Saving 
