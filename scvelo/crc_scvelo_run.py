@@ -3,9 +3,9 @@ import scvelo as scv
 scv.settings.verbocity = 3
 scv.settings.presenter_view = True
 
-crcdata = scv.read('kul19_10000.loom', cache=True)
+crcdata = scv.read('kul01.loom', cache=True)
 crcdata.var_names_make_unique()
-crcdata
+crcdata # shows dimensions: n_obs x n_vars (n_obs=number of cells, n_vars=cell info)
 
 # scv.pl.proportions(adata) # View proportion spliced/unspliced counts (in pie chart)
 
@@ -22,7 +22,7 @@ scv.tl.velocity(crcdata)
 scv.tl.velocity_graph(crcdata)
 
 
-scv.tl.louvain(crcdata) # resolution default=1, try 0.5
+scv.tl.louvain(crcdata, resolution=0.5) # resolution default=1, try 0.5
 
 # Set to UMAP embedding
 scv.tl.umap(crcdata)
