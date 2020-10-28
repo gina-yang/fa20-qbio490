@@ -43,3 +43,12 @@ def plot_velocity(data_obj, louvain_res):
 # Plot phase portraits of marker genes
 def plot_genes(data_obj, gene_list):
 	scv.pl.velocity(data_obj, gene_list, ncols=2)
+
+
+# Output high expressed genes for each louvain cluster to a csv file
+def get_top_genes(data_obj, csvfile):
+	scv.tl.rank_velocity_genes(data_obj, groupby='louvain', min_corr=.3)
+	df = scv.DataFrame(data_obj.uns['rank_velocity_genes']['names']) 
+	#  df.head() # See top 5 genes for each cluster
+	df.to_csv(csvfile, index=False)
+
