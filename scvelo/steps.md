@@ -13,14 +13,10 @@
     * `scv.pp.*` functions for preprocessing
     * `scv.tl.*` analysis tools
     * `scv.pl.*` plotting tools
-    * Also `scv.utils*` has useful utilities for data cleaning and merging
+    * Also `scv.utils*` has useful utilities for data cleaning and merging.
+        * Note: merge doens't work for concatenating, see here: https://github.com/theislab/scvelo/issues/263
 
 ### Notes:
 - Make sure to use Python 3.8 (but not 3.9 because as of Oct 2020 it seems to be poorly supported). 3.7 and below can result in using old versions of packages with a bunch of fun errors and cross-package compatability issues.
 - On that note, if stuff isn't working/weird errors, ensure that packages are updated (ex. with `pip install -U [packagename]` or `conda update [packagename]`) 
 - loompy outputs total number of cells in the input files just before creating the loom file. So, to include all cells, it is probably best to specify a large number of cells in the metadata.tab file. (unless you know the number of input cells, in which case put that)
-
-### Questions/Issues:
-- How to remove cells from processing?
-- How to change number of genes used in velocity analysis?
-- What defines a sample in the metadata file? It seems that loompy assumes each R1+R2 file pair represents a sample.

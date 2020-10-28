@@ -2,10 +2,13 @@ import scvelo as scv
 
 scv.settings.verbocity = 3
 scv.settings.presenter_view = True
+scv.set_figure_params('scvelo') # For beautified visualization
 
-crcdata = scv.read('kul01.loom', cache=True)
+crcdata = scv.read('kul19_normal.loom', cache=True)
 crcdata.var_names_make_unique()
 crcdata # shows dimensions: n_obs x n_vars (n_obs=number of cells, n_vars=cell info)
+
+# To concatenate data objects (adata3 = adata2 + adata1) : adata3 = adata2.concatenate(adata1)
 
 # scv.pl.proportions(adata) # View proportion spliced/unspliced counts (in pie chart)
 
@@ -28,5 +31,11 @@ scv.tl.louvain(crcdata, resolution=0.5) # resolution default=1, try 0.5
 scv.tl.umap(crcdata)
 # Plot velocity as streamlines
 scv.pl.velocity_embedding_stream(crcdata, basis='umap')
-# Pass marker genes in list to plot expression/velocity
+
+
+
+# Plot phase portraits for marker genes
 scv.pl.velocity(crcdata, ['CD3D',  'CD68', 'DCN', 'EPCAM', 'KIT', 'CD79A'], ncols=2)
+
+# Identify hihgly expressed genes in each cluster
+scv.tl.rank_velocity_genes(adata, groupby='clusters', min_corr=.3)
