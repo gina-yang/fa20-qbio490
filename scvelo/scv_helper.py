@@ -37,13 +37,12 @@ def plot_velocity(data_obj, louvain_res):
 	# Plot velocity as streamlines
 	scv.pl.velocity_embedding_stream(data_obj, basis='umap')
 
-# Pass marker genes in list to plot phase portraits
-# marker_genes = ['CD3D', 'CD68', 'DCN', 'EPCAM', 'KIT', 'CD79A']
-
 # Plot phase portraits of marker genes
 def plot_genes(data_obj, gene_list):
 	scv.pl.velocity(data_obj, gene_list, ncols=2)
 
+# Pass marker genes in list to plot phase portraits
+# marker_genes = ['CD3D', 'CD68', 'DCN', 'EPCAM', 'KIT', 'CD79A']
 
 # Output high expressed genes for each louvain cluster to a csv file
 def get_top_genes(data_obj, csvfile):
