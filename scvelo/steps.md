@@ -1,9 +1,10 @@
 # Running scvelo
 ### Steps:
 1. Follow kallisto installation instructions [here](https://chmi-sops.github.io/mydoc_kallisto.html) to download kallisto. (For Windows, remember to add kallisto to PATH)
-2. [Create loom file with loompy/kallisto.](https://linnarssonlab.org/loompy/kallisto/index.html)
-    * Getting indexes for non 10X chromium data seems mildly complicated. However, the tutorial implies that non 10X data is not supported with loompy yet anyway.
-    * **Important:** the `loompy fromfq` command requires pairs of fastq read files, i.e. one filename should have "R1" (barcodes) and the other "R2" (cDNA sequences). Do not add the "I1" (index/lane info) file. Additionally, the order the files are presented in the command matters: always list the corresponding R1 and R2 files for a given lane together. 
+2. [Follow the steps here to create a loom file with loompy/kallisto.](https://linnarssonlab.org/loompy/kallisto/index.html)
+    * I used the provided pre-built index of the human genome. Getting indexes for non 10X chromium data seems mildly complicated. However, the tutorial implies that non 10X data is not supported with loompy yet anyway.
+    * Metadata file: has one row per sample. If the target/expected number of cells is not specified in the metadata file, it will default to 5000.
+    * **Important:** the `loompy fromfq` command requires pairs of fastq read files, i.e. one filename should have `R1` (barcodes) and the other `R2` (cDNA sequences). Do not add the  file with`I1` (index/lane info). Additionally, the order the files are presented in the command matters:corresponding R1 and R2 files for a given lane should be listed together. More info about 10x fastq file naming conventions [here.](https://support.10xgenomics.com/single-cell-atac/software/pipelines/latest/using/fastq-input)
 3. Use [this guide](https://scvelo.readthedocs.io/VelocityBasics.html) to get a basic workflow for velocity analysis going.
     * The tutorial data has pre-computed UMAP embedding and colored clusters. To perform clustering and embedding, use `tl.louvain` and `tl.umap`. 
 4. More info about functions in the [API](https://scvelo.readthedocs.io/api.html).
@@ -22,3 +23,4 @@
 ### Questions/Issues:
 - How to remove cells from processing?
 - How to change number of genes used in velocity analysis?
+- What defines a sample in the metadata file? It seems that loompy assumes each R1+R2 file pair represents a sample.
