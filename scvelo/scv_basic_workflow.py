@@ -6,7 +6,6 @@ scv.set_figure_params('scvelo') # For beautified visualization
 
 crcdata = scv.read('kul19_normal.loom', cache=True)
 crcdata.var_names_make_unique()
-crcdata # shows dimensions: n_obs x n_vars (n_obs=number of cells, n_vars=cell info)
 
 ### ANNDATA UTILITIES ### https://anndata.readthedocs.io/en/latest/api.html
 # adata = adata1.concatenate(adata2) # to concatenate two data objects (adata = adata1 + adata2)
@@ -17,7 +16,7 @@ crcdata # shows dimensions: n_obs x n_vars (n_obs=number of cells, n_vars=cell i
 
 ### WRITING DATA MATRIX TO FILE ###
 # adata.X # this is the expression matrix of n_obs x n_vars. it is a scipy/numpy sparse matrix
-# kul01.to_df().to_csv('myfile.csv') # to save expression matrix to csv file (reference https://github.com/theislab/scanpy/issues/262)
+# kul01.T.to_df().to_csv('myfile.csv') # to save expression matrix to csv file (reference https://github.com/theislab/scanpy/issues/262)
 
 # scv.pl.proportions(adata) # View proportion spliced/unspliced counts (in pie chart)
 

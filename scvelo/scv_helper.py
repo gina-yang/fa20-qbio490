@@ -11,16 +11,6 @@ def setup(loomfile):
 	crcdata.var_names_make_unique()
 	return(crcdata)
 
-### ANNDATA UTILITIES ### https://anndata.readthedocs.io/en/latest/api.html
-# adata = adata1.concatenate(adata2) # to concatenate two data objects (adata = adata1 + adata2)
-# adata = tumorborder.concatenate(tumorcore, batch_key='batch',batch_categories=['tumor border', 'tumor core']) 
-# adata.obs # shows observations
-# adata.var # shows cell info
-# adata.obs[name] # show obs called 'name'
-
-### WRITING DATA MATRIX TO FILE ###
-# adata.X # this is the expression matrix of n_obs x n_vars. it is a scipy/numpy sparse matrix
-# kul01.to_df().to_csv('myfile.csv') # to save expression matrix to csv file (reference https://github.com/theislab/scanpy/issues/262)
 
 
 # Preprocessing
@@ -42,20 +32,4 @@ def compute_velocity(data_obj, louvain_res):
 	# Set to UMAP embedding
 	scv.tl.umap(data_obj)
 	
-# Plot velocity as streamlines with cells colored by cluster (found by louvain)
-scv.pl.velocity_embedding_stream(data_obj, color='louvain')
-# This time colored by batch
-scv.pl.velocity_embedding_stream(adata, color='batch', legend_loc='lower left') 
-
-
-# Plot phase portraits of marker genes
-scv.pl.velocity(data_obj, ['CD3D', 'CD68', 'DCN', 'EPCAM', 'KIT', 'CD79A'], ncols=2)
-
-
-# def get_top_genes(data_obj, csvfile):
-# 	# sc.tl.rank_genes_groups() to obtain cluster markers
-# 	scv.tl.rank_velocity_genes(data_obj, groupby='louvain', min_corr=.3)
-# 	df = scv.DataFrame(data_obj.uns['rank_velocity_genes']['names']) 
-# 	#  df.head() # See top 5 genes for each cluster
-# 	df.to_csv(csvfile, index=False)
 
