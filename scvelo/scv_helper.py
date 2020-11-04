@@ -5,15 +5,19 @@ import scvelo as scv
 def setup(loomfile):
 	scv.settings.verbocity = 3
 	scv.settings.presenter_view = True
-	scv.set_figure_params('scvelo') # For beautified visualization
+	# scv.set_figure_params('scvelo') # For beautified visualization
 
 	crcdata = scv.read(loomfile, cache=True)
 	crcdata.var_names_make_unique()
 	return(crcdata)
 
 
-# crcdata # shows dimensions: n_obs x n_vars (n_obs=number of cells, n_vars=cell info)
+# adata # shows dimensions: n_obs x n_vars (n_obs=number of cells, n_vars=cell info)
 # adata = adata1.concatenate(adata2) # to concatenate two data objects (adata = adata1 + adata2)
+# adata = tumorborder.concatenate(tumorcore, batch_key='batch',batch_categories=['tumor border', 'tumor core']) 
+# adata.obs # shows observations
+# adata.var # shows cell info
+# adata.obs[name] # show obs called 'name'
 
 
 # Preprocessing
@@ -27,22 +31,23 @@ def preproc(data_obj):
 	scv.pp.moments(data_obj, n_pcs=30, n_neighbors=30)
 	return(data_obj)
 
-# Estimates RNA velocity and projects and visualizes them
-def plot_velocity(data_obj, louvain_res):
+# Estimates RNA velocity
+def compute_velocity(data_obj, louvain_res):
 	scv.tl.velocity(data_obj)
 	scv.tl.velocity_graph(data_obj)
 	scv.tl.louvain(data_obj, resolution=louvain_res) # resolution default = 1, try 0.5
 	# Set to UMAP embedding
 	scv.tl.umap(data_obj)
-	# Plot velocity as streamlines
-	scv.pl.velocity_embedding_stream(data_obj, basis='umap')
+	
+# Plot velocity as streamlines with cells colored by cluster (found by louvain)
+scv.pl.velocity_embedding_stream(data_obj, color='louvain')
+# This time colored by batch
+scv.pl.velocity_embedding_stream(adata, color='batch', legend_loc='lower left') 
+
 
 # Plot phase portraits of marker genes
-def plot_genes(data_obj, gene_list):
-	scv.pl.velocity(data_obj, gene_list, ncols=2)
+scv.pl.velocity(data_obj, ['CD3D', 'CD68', 'DCN', 'EPCAM', 'KIT', 'CD79A'], ncols=2)
 
-# Pass marker genes in list to plot phase portraits
-# marker_genes = ['CD3D', 'CD68', 'DCN', 'EPCAM', 'KIT', 'CD79A']
 
 # Output high expressed genes for each louvain cluster to a csv file
 def get_top_genes(data_obj, csvfile):
