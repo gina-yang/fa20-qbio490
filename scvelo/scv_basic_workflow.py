@@ -8,7 +8,16 @@ crcdata = scv.read('kul19_normal.loom', cache=True)
 crcdata.var_names_make_unique()
 crcdata # shows dimensions: n_obs x n_vars (n_obs=number of cells, n_vars=cell info)
 
-# To concatenate data objects (adata3 = adata2 + adata1) : adata3 = adata2.concatenate(adata1)
+### ANNDATA UTILITIES ### https://anndata.readthedocs.io/en/latest/api.html
+# adata = adata1.concatenate(adata2) # to concatenate two data objects (adata = adata1 + adata2)
+# adata = tumorborder.concatenate(tumorcore, batch_key='batch',batch_categories=['tumor border', 'tumor core']) 
+# adata.obs # shows observations
+# adata.var # shows cell info
+# adata.obs[name] # show obs called 'name'
+
+### WRITING DATA MATRIX TO FILE ###
+# adata.X # this is the expression matrix of n_obs x n_vars. it is a scipy/numpy sparse matrix
+# kul01.to_df().to_csv('myfile.csv') # to save expression matrix to csv file (reference https://github.com/theislab/scanpy/issues/262)
 
 # scv.pl.proportions(adata) # View proportion spliced/unspliced counts (in pie chart)
 
@@ -33,9 +42,19 @@ scv.tl.umap(crcdata)
 scv.pl.velocity_embedding_stream(crcdata, basis='umap')
 
 
+# Plot velocity as streamlines with cells colored by cluster (found by louvain)
+scv.pl.velocity_embedding_stream(crcdata, color='louvain')
+# This time colored by batch
+scv.pl.velocity_embedding_stream(crcdata, color='batch', legend_loc='lower left') 
 
-# Plot phase portraits for marker genes
-scv.pl.velocity(crcdata, ['CD3D',  'CD68', 'DCN', 'EPCAM', 'KIT', 'CD79A'], ncols=2)
 
-# Identify hihgly expressed genes in each cluster
-scv.tl.rank_velocity_genes(adata, groupby='clusters', min_corr=.3)
+# Plot phase portraits of marker genes
+scv.pl.velocity(crcdata, ['CD3D', 'CD68', 'DCN', 'EPCAM', 'KIT', 'CD79A'], ncols=2)
+
+
+# def get_top_genes(data_obj, csvfile):
+# 	# sc.tl.rank_genes_groups() to obtain cluster markers
+# 	scv.tl.rank_velocity_genes(data_obj, groupby='louvain', min_corr=.3)
+# 	df = scv.DataFrame(data_obj.uns['rank_velocity_genes']['names']) 
+# 	#  df.head() # See top 5 genes for each cluster
+# 	df.to_csv(csvfile, index=False)
