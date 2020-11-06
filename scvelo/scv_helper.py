@@ -24,6 +24,7 @@ def preproc(data_obj):
 	scv.pp.moments(data_obj, n_pcs=30, n_neighbors=30)
 	return(data_obj)
 
+
 # Estimates RNA velocity
 def compute_velocity(data_obj, louvain_res):
 	scv.tl.velocity(data_obj)
