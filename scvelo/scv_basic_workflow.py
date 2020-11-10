@@ -4,7 +4,7 @@ scv.settings.verbocity = 3
 scv.settings.presenter_view = True
 scv.set_figure_params('scvelo') # For beautified visualization
 
-crcdata = scv.read('kul19_normal.loom', cache=True)
+crcdata = scv.read('kul19_normal.loom')
 crcdata.var_names_make_unique()
 
 ### ANNDATA UTILITIES ### https://anndata.readthedocs.io/en/latest/api.html
@@ -33,7 +33,7 @@ scv.tl.velocity(crcdata)
 scv.tl.velocity_graph(crcdata)
 
 
-scv.tl.louvain(crcdata, resolution=0.5) # resolution default=1, try 0.5
+scv.tl.louvain(crcdata, resolution=0.2) # resolution default=1, try 0.5
 
 # Set to UMAP embedding
 scv.tl.umap(crcdata)
