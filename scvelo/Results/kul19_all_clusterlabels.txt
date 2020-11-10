@@ -1,0 +1,9 @@
+cluster 0 = T cells
+cluster 1 = epithelial
+cluster 2 = B cells
+cluster 3 = epithelial
+cluster 4 = fibroblasts/stromal cells
+cluster 5 = epithelial
+cluster 6 = myeloid, B cells
+cluster 7 = endothelial
+cluster 8 = also myeloid? with cluster 6

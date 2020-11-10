@@ -50,10 +50,3 @@ scv.pl.velocity_embedding_stream(crcdata, color='batch', legend_loc='lower left'
 # Plot phase portraits of marker genes
 scv.pl.velocity(crcdata, ['CD3D', 'CD68', 'DCN', 'EPCAM', 'KIT', 'CD79A'], ncols=2)
 
-
-# def get_top_genes(data_obj, csvfile):
-# 	# sc.tl.rank_genes_groups() to obtain cluster markers
-# 	scv.tl.rank_velocity_genes(data_obj, groupby='louvain', min_corr=.3)
-# 	df = scv.DataFrame(data_obj.uns['rank_velocity_genes']['names']) 
-# 	#  df.head() # See top 5 genes for each cluster
-# 	df.to_csv(csvfile, index=False)
