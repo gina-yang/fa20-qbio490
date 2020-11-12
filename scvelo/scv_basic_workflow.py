@@ -49,4 +49,3 @@ scv.pl.velocity_embedding_stream(crcdata, color='batch', legend_loc='lower left'
 
 # Plot phase portraits of marker genes
 scv.pl.velocity(crcdata, ['CD3D', 'CD68', 'DCN', 'EPCAM', 'KIT', 'CD79A'], ncols=2)
-
